@@ -18,7 +18,7 @@ def create_model():
     out = TimeDistributed(Dense(n_tags + 1, activation="softmax"))(main_lstm)
     model = Model([word_in, char_in], out)
     model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["acc"])
-   return model
+    return model
 
 def load_trained_model(weights_path):
    model = create_model()
